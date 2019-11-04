@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as React from 'react';
 import { AppRegistry, Text, View } from 'react-native';
 
@@ -58,3 +59,21 @@ export default class App extends React.Component {
 
 // //export default myapp
 // // createAppContainer(MainNavigator);
+=======
+import React, {Component} from 'react';
+import { AppRegistry, Text, View } from 'react-native';
+
+import Breeds from './app/components/Breeds/Breeds';
+
+export default class myapp extends Component{
+  render(){
+    return(
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center"}}>
+        <Breeds message= "Hi, Doggi Lovers"/>
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('myapp', () => myapp);
+>>>>>>> 1d53e43829ce81a98c2ee79b164d02e5d3d8d515
