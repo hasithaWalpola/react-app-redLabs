@@ -47,7 +47,7 @@ export default class BreedDetails extends Component{
         ))}
           <Button 
                 onPress={this.fetchData}
-                title="Go Back"
+                title="Change The Picture"
             />
       </View>
     );

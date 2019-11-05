@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     //alignItems: 'flex-start' 
   },
   item: {
-    width: '100%',
+   // width: '100%',
     backgroundColor: "gray",
     padding: 20,
     marginVertical: 8,
