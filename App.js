@@ -2,58 +2,36 @@ import * as React from 'react';
 
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import Breeds from './app/components/Breeds';
-import BreedDetails from './app/components/BreedDetails';
-
+import { Breeds, BreedDetails } from './app/components';
+import { APP_CONFIG } from "./app/configs";
+import { toSentenceCase } from "./app/utils";
 
 const RootStack = createStackNavigator(
   {
-    Home: Breeds,
-    Details: BreedDetails,
+    Home: {
+        screen: Breeds,
+        path: "breeds",
+        navigationOptions: ({ navigation }) => ({
+            title: APP_CONFIG.APP_NAME,
+        }),
+    },
+    Details: {
+        screen: BreedDetails,
+        path: "breed-details",
+        navigationOptions: ({ navigation }) => ({
+            title: toSentenceCase(navigation.state.params.item.name),
+        }),
+    },
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: "Home",
   }
 );
 
 const AppContainer = createAppContainer(RootStack);
-// AppRegistry.registerComponent('App', () => RootStack);
 
 export default class App extends React.Component {
   render() {
     return <AppContainer />;
   }
 }
-
-
-
-// import React, {Component} from 'react';
-// import { AppRegistry, Text, View,} from 'react-native';
-
-// import {createAppContainer} from 'react-navigation';
-// import {createStackNavigator} from 'react-navigation-stack';
-
-// import Breeds from './app/components/Breeds';
-// import BreedDetails from './app/components/BreedDetails';
-
-
-//   const MainNavigator = createStackNavigator({
-//     Home: Breeds,
-//     Details: BreedDetails,
-//   });
-
-//  // const myapp = createAppContainer(MainNavigator);
-
-// export default class myapp extends Component{
-
-//   render(){
-//     return(
-//       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-//         <MainNavigator/>
-//       </View>
-//     );
-//   }
-// }
-
-// //export default myapp
-// // createAppContainer(MainNavigator);
