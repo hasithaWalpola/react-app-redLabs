@@ -18,6 +18,7 @@ export class Breeds extends Component {
         this.fetchData();
     }
 
+    /* get the breed list and add data into array as key value pairs */
     fetchData() {
         const breedArray = [];
 
